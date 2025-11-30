@@ -1,9 +1,12 @@
-package com.homsim.jeld;
+package com.homsim.jeld.control;
 
+import com.homsim.jeld.service.BankAccountService;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 
-public class HelloController {
+public class MainController {
+    private BankAccountService bankAccountService;
+
     @FXML
     private Label welcomeText;
 
