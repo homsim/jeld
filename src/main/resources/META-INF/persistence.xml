@@ -8,7 +8,7 @@
             Persistence unit for the Jeld application
         </description>
 
-        <class>com.homsim.jeld.data.BankAccount</class>
+        <class>com.homsim.jeld.data.model.BankAccount</class>
 
         <properties>
             <!-- Database connection settings -->

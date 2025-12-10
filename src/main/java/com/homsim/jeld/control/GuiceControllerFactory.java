@@ -3,12 +3,7 @@ package com.homsim.jeld.control;
 import com.google.inject.Injector;
 import javafx.util.Callback;
 
-public class GuiceControllerFactory implements Callback<Class<?>, Object> {
-    private final Injector injector;
-
-    public GuiceControllerFactory(Injector injector) {
-        this.injector = injector;
-    }
+public record GuiceControllerFactory(Injector injector) implements Callback<Class<?>, Object> {
 
     @Override
     public Object call(Class<?> type) {

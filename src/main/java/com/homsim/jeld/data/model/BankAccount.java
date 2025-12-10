@@ -1,4 +1,4 @@
-package com.homsim.jeld.data;
+package com.homsim.jeld.data.model;
 
 import jakarta.persistence.*;
 import lombok.Data;

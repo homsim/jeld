@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<SplitPane dividerPositions="0.3" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1">
+    <items>
+        <!-- Left side containing the vertical SplitPane -->
+        <SplitPane dividerPositions="0.7" orientation="VERTICAL">
+            <items>
+                <AnchorPane minHeight="0.0" minWidth="0.0" />
+                <AnchorPane minHeight="0.0" minWidth="0.0" />
+            </items>
+        </SplitPane>
+        <SplitPane dividerPositions="0.8" orientation="VERTICAL">
+            <items>
+            <ScrollPane>
+               <content>
+                      <AreaChart>
+                          <xAxis>
+                              <CategoryAxis side="BOTTOM" />
+                          </xAxis>
+                          <yAxis>
+                              <NumberAxis side="LEFT" />
+                          </yAxis>
+                      </AreaChart>
+               </content>
+            </ScrollPane>
+                <SplitPane dividerPositions="0.3">
+                    <items>
+                        <PieChart />
+                        <TableView>
+                            <columns>
+                            </columns>
+                        </TableView>
+                    </items>
+                </SplitPane>
+            </items>
+        </SplitPane>
+    </items>
+</SplitPane>

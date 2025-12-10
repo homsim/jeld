@@ -2,7 +2,7 @@ package com.homsim.jeld.service;
 
 
 import com.google.inject.Inject;
-import com.homsim.jeld.data.BankAccount;
+import com.homsim.jeld.data.model.BankAccount;
 import jakarta.persistence.EntityManagerFactory;
 
 public class BankAccountService extends DatabaseBaseService<BankAccount> {

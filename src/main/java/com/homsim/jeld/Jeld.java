@@ -22,7 +22,7 @@ public class Jeld extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader loader = new FXMLLoader(Jeld.class.getResource("hello-view.fxml"));
+        FXMLLoader loader = new FXMLLoader(Jeld.class.getResource("main-view.fxml"));
 
         loader.setControllerFactory(new GuiceControllerFactory(injector));
 
