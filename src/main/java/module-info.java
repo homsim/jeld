@@ -8,6 +8,7 @@ module com.homsim.jeld {
     requires static lombok;
     requires jakarta.persistence;
     requires com.google.guice;
+    requires jakarta.xml.bind;
 
     opens com.homsim.jeld to javafx.fxml;
     exports com.homsim.jeld;
