@@ -1,22 +1,23 @@
-<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+<persistence xmlns="https://jakarta.ee/xml/ns/persistence"
              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-             xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
-             version="2.0">
-
-    <persistence-unit name="com.homsim.jeld">
+             xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence https://jakarta.ee/xml/ns/persistence/persistence_3_0.xsd"
+             version="3.0">
+    <persistence-unit name="com.homsim.jeld" transaction-type="RESOURCE_LOCAL">
         <description>
-            Persistence unit for the Jeld application
+            Persistence unit for Jeld
         </description>
+
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 
         <class>com.homsim.jeld.data.model.BankAccount</class>
 
         <properties>
-            <!-- Database connection settings -->
+            <!-- Database connection settings. Is it safe to write the password here? Is this even required as an embedded DB? -->
             <property name="jakarta.persistence.jdbc.url" value="jdbc:h2:mem:db1;DB_CLOSE_DELAY=-1" />
             <property name="jakarta.persistence.jdbc.user" value="sa" />
             <property name="jakarta.persistence.jdbc.password" value="" />
 
-            <!-- Automatically export the schema -->
+            <!-- Automatically export the schema. Replace as soon as the full schema is clear-->
             <property name="jakarta.persistence.schema-generation.database.action" value="create" />
 
             <!-- Echo all executed SQL to console -->
