@@ -9,7 +9,7 @@
 
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 
-        <class>com.homsim.jeld.data.model.BankAccount</class>
+        <class>com.homsim.jeld.data.BankAccount</class>
 
         <properties>
             <!-- Database connection settings. Is it safe to write the password here? Is this even required as an embedded DB? -->

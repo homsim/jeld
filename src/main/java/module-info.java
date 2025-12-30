@@ -11,7 +11,7 @@ module com.homsim.jeld {
     opens com.homsim.jeld to javafx.fxml;
     opens com.homsim.jeld.control to javafx.fxml;
 
-    opens com.homsim.jeld.data.model to org.hibernate.orm.core;
+    opens com.homsim.jeld.data to org.hibernate.orm.core;
 
     exports com.homsim.jeld;
 }
