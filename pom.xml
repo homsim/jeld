@@ -204,6 +204,39 @@
                     <mainClass>com.homsim.jeld.Jeld</mainClass>
                 </configuration>
             </plugin>
+
+            <plugin>
+                <groupId>org.jvnet.jaxb</groupId>
+                <artifactId>jaxb-maven-plugin</artifactId>
+                <version>4.0.0</version>
+                <executions>
+                    <execution>
+                        <id>generate</id>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <schemaDirectory>
+                        src/main/resources/com/homsim/jeld/data/parse/camt
+                    </schemaDirectory>
+                    <schemaIncludes>
+                        <include>
+                            *.xsd
+                        </include>
+                    </schemaIncludes>
+                    <bindingDirectory>
+                        src/main/resources/com/homsim/jeld/data/parse/camt
+                    </bindingDirectory>
+                    <bindingIncludes>
+                        <include>
+                            *.xjb
+                        </include>
+                    </bindingIncludes>
+
+                </configuration>
+            </plugin>
         </plugins>
     </build>
 </project>

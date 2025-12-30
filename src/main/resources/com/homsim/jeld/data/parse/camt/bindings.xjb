@@ -1,0 +1,269 @@
+<jaxb:bindings version="3.0"
+    xmlns:jaxb="https://jakarta.ee/xml/ns/jaxb"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <jaxb:bindings schemaLocation="camt.052.001.01.xsd">
+        <jaxb:schemaBindings>
+            <jaxb:package name="com.homsim.jeld.data.parse.camt_052_001_01"/>
+        </jaxb:schemaBindings>
+    </jaxb:bindings>
+
+    <jaxb:bindings schemaLocation="camt.052.001.02.xsd">
+        <jaxb:schemaBindings>
+            <jaxb:package name="com.homsim.jeld.data.parse.camt_052_001_02"/>
+        </jaxb:schemaBindings>
+    </jaxb:bindings>
+
+    <jaxb:bindings schemaLocation="camt.052.001.03.xsd">
+        <jaxb:schemaBindings>
+            <jaxb:package name="com.homsim.jeld.data.parse.camt_052_001_03"/>
+        </jaxb:schemaBindings>
+    </jaxb:bindings>
+
+    <jaxb:bindings schemaLocation="camt.052.001.04.xsd">
+        <jaxb:schemaBindings>
+            <jaxb:package name="com.homsim.jeld.data.parse.camt_052_001_04"/>
+        </jaxb:schemaBindings>
+    </jaxb:bindings>
+
+    <jaxb:bindings schemaLocation="camt.052.001.05.xsd">
+        <jaxb:schemaBindings>
+            <jaxb:package name="com.homsim.jeld.data.parse.camt_052_001_05"/>
+        </jaxb:schemaBindings>
+    </jaxb:bindings>
+
+    <jaxb:bindings schemaLocation="camt.052.001.06.xsd">
+        <jaxb:schemaBindings>
+            <jaxb:package name="com.homsim.jeld.data.parse.camt_052_001_06"/>
+        </jaxb:schemaBindings>
+    </jaxb:bindings>
+
+    <jaxb:bindings schemaLocation="camt.052.001.07.xsd">
+        <jaxb:schemaBindings>
+            <jaxb:package name="com.homsim.jeld.data.parse.camt_052_001_07"/>
+        </jaxb:schemaBindings>
+    </jaxb:bindings>
+
+    <jaxb:bindings schemaLocation="camt.052.001.08.xsd">
+        <jaxb:schemaBindings>
+            <jaxb:package name="com.homsim.jeld.data.parse.camt_052_001_08"/>
+        </jaxb:schemaBindings>
+    </jaxb:bindings>
+
+    <jaxb:bindings schemaLocation="camt.052.001.09.xsd">
+        <jaxb:schemaBindings>
+            <jaxb:package name="com.homsim.jeld.data.parse.camt_052_001_09"/>
+        </jaxb:schemaBindings>
+    </jaxb:bindings>
+
+    <jaxb:bindings schemaLocation="camt.052.001.10.xsd">
+        <jaxb:schemaBindings>
+            <jaxb:package name="com.homsim.jeld.data.parse.camt_052_001_10"/>
+        </jaxb:schemaBindings>
+    </jaxb:bindings>
+
+    <jaxb:bindings schemaLocation="camt.052.001.11.xsd">
+        <jaxb:schemaBindings>
+            <jaxb:package name="com.homsim.jeld.data.parse.camt_052_001_11"/>
+        </jaxb:schemaBindings>
+    </jaxb:bindings>
+
+    <jaxb:bindings schemaLocation="camt.052.001.12.xsd">
+        <jaxb:schemaBindings>
+            <jaxb:package name="com.homsim.jeld.data.parse.camt_052_001_12"/>
+        </jaxb:schemaBindings>
+    </jaxb:bindings>
+
+    <jaxb:bindings schemaLocation="camt.052.001.13.xsd">
+        <jaxb:schemaBindings>
+            <jaxb:package name="com.homsim.jeld.data.parse.camt_052_001_13"/>
+        </jaxb:schemaBindings>
+    </jaxb:bindings>
+
+    <jaxb:bindings schemaLocation="camt.053.001.01.xsd">
+        <jaxb:schemaBindings>
+            <jaxb:package name="com.homsim.jeld.data.parse.camt_053_001_01"/>
+        </jaxb:schemaBindings>
+    </jaxb:bindings>
+
+    <jaxb:bindings schemaLocation="camt.053.001.02.xsd">
+        <jaxb:schemaBindings>
+            <jaxb:package name="com.homsim.jeld.data.parse.camt_053_001_02"/>
+        </jaxb:schemaBindings>
+    </jaxb:bindings>
+
+    <jaxb:bindings schemaLocation="camt.053.001.03.xsd">
+        <jaxb:schemaBindings>
+            <jaxb:package name="com.homsim.jeld.data.parse.camt_053_001_03"/>
+        </jaxb:schemaBindings>
+    </jaxb:bindings>
+
+    <jaxb:bindings schemaLocation="camt.053.001.04.xsd">
+        <jaxb:schemaBindings>
+            <jaxb:package name="com.homsim.jeld.data.parse.camt_053_001_04"/>
+        </jaxb:schemaBindings>
+    </jaxb:bindings>
+
+    <jaxb:bindings schemaLocation="camt.053.001.05.xsd">
+        <jaxb:schemaBindings>
+            <jaxb:package name="com.homsim.jeld.data.parse.camt_053_001_05"/>
+        </jaxb:schemaBindings>
+    </jaxb:bindings>
+
+    <jaxb:bindings schemaLocation="camt.053.001.06.xsd">
+        <jaxb:schemaBindings>
+            <jaxb:package name="com.homsim.jeld.data.parse.camt_053_001_06"/>
+        </jaxb:schemaBindings>
+    </jaxb:bindings>
+
+    <jaxb:bindings schemaLocation="camt.053.001.07.xsd">
+        <jaxb:schemaBindings>
+            <jaxb:package name="com.homsim.jeld.data.parse.camt_053_001_07"/>
+        </jaxb:schemaBindings>
+    </jaxb:bindings>
+
+    <jaxb:bindings schemaLocation="camt.053.001.08.xsd">
+        <jaxb:schemaBindings>
+            <jaxb:package name="com.homsim.jeld.data.parse.camt_053_001_08"/>
+        </jaxb:schemaBindings>
+    </jaxb:bindings>
+
+    <jaxb:bindings schemaLocation="camt.053.001.09.xsd">
+        <jaxb:schemaBindings>
+            <jaxb:package name="com.homsim.jeld.data.parse.camt_053_001_09"/>
+        </jaxb:schemaBindings>
+    </jaxb:bindings>
+
+    <jaxb:bindings schemaLocation="camt.053.001.10.xsd">
+        <jaxb:schemaBindings>
+            <jaxb:package name="com.homsim.jeld.data.parse.camt_053_001_10"/>
+        </jaxb:schemaBindings>
+    </jaxb:bindings>
+
+    <jaxb:bindings schemaLocation="camt.053.001.11.xsd">
+        <jaxb:schemaBindings>
+            <jaxb:package name="com.homsim.jeld.data.parse.camt_053_001_11"/>
+        </jaxb:schemaBindings>
+    </jaxb:bindings>
+
+    <jaxb:bindings schemaLocation="camt.053.001.12.xsd">
+        <jaxb:schemaBindings>
+            <jaxb:package name="com.homsim.jeld.data.parse.camt_053_001_12"/>
+        </jaxb:schemaBindings>
+    </jaxb:bindings>
+
+    <jaxb:bindings schemaLocation="camt.053.001.13.xsd">
+        <jaxb:schemaBindings>
+            <jaxb:package name="com.homsim.jeld.data.parse.camt_053_001_13"/>
+        </jaxb:schemaBindings>
+    </jaxb:bindings>
+
+    <jaxb:bindings schemaLocation="camt.054.001.01.xsd">
+        <jaxb:schemaBindings>
+            <jaxb:package name="com.homsim.jeld.data.parse.camt_054_001_01"/>
+        </jaxb:schemaBindings>
+    </jaxb:bindings>
+
+    <jaxb:bindings schemaLocation="camt.054.001.02.xsd">
+        <jaxb:schemaBindings>
+            <jaxb:package name="com.homsim.jeld.data.parse.camt_054_001_02"/>
+        </jaxb:schemaBindings>
+    </jaxb:bindings>
+
+    <jaxb:bindings schemaLocation="camt.054.001.03.xsd">
+        <jaxb:schemaBindings>
+            <jaxb:package name="com.homsim.jeld.data.parse.camt_054_001_03"/>
+        </jaxb:schemaBindings>
+    </jaxb:bindings>
+
+    <jaxb:bindings schemaLocation="camt.054.001.04.xsd">
+        <jaxb:schemaBindings>
+            <jaxb:package name="com.homsim.jeld.data.parse.camt_054_001_04"/>
+        </jaxb:schemaBindings>
+    </jaxb:bindings>
+
+    <jaxb:bindings schemaLocation="camt.054.001.05.xsd">
+        <jaxb:schemaBindings>
+            <jaxb:package name="com.homsim.jeld.data.parse.camt_054_001_05"/>
+        </jaxb:schemaBindings>
+    </jaxb:bindings>
+
+    <jaxb:bindings schemaLocation="camt.054.001.06.xsd">
+        <jaxb:schemaBindings>
+            <jaxb:package name="com.homsim.jeld.data.parse.camt_054_001_06"/>
+        </jaxb:schemaBindings>
+    </jaxb:bindings>
+
+    <jaxb:bindings schemaLocation="camt.054.001.07.xsd">
+        <jaxb:schemaBindings>
+            <jaxb:package name="com.homsim.jeld.data.parse.camt_054_001_07"/>
+        </jaxb:schemaBindings>
+    </jaxb:bindings>
+
+    <jaxb:bindings schemaLocation="camt.054.001.08.xsd">
+        <jaxb:schemaBindings>
+            <jaxb:package name="com.homsim.jeld.data.parse.camt_054_001_08"/>
+        </jaxb:schemaBindings>
+    </jaxb:bindings>
+
+    <jaxb:bindings schemaLocation="camt.054.001.09.xsd">
+        <jaxb:schemaBindings>
+            <jaxb:package name="com.homsim.jeld.data.parse.camt_054_001_09"/>
+        </jaxb:schemaBindings>
+    </jaxb:bindings>
+
+    <jaxb:bindings schemaLocation="camt.054.001.10.xsd">
+        <jaxb:schemaBindings>
+            <jaxb:package name="com.homsim.jeld.data.parse.camt_054_001_10"/>
+        </jaxb:schemaBindings>
+    </jaxb:bindings>
+
+    <jaxb:bindings schemaLocation="camt.054.001.11.xsd">
+        <jaxb:schemaBindings>
+            <jaxb:package name="com.homsim.jeld.data.parse.camt_054_001_11"/>
+        </jaxb:schemaBindings>
+    </jaxb:bindings>
+
+    <jaxb:bindings schemaLocation="camt.054.001.12.xsd">
+        <jaxb:schemaBindings>
+            <jaxb:package name="com.homsim.jeld.data.parse.camt_054_001_12"/>
+        </jaxb:schemaBindings>
+    </jaxb:bindings>
+
+    <jaxb:bindings schemaLocation="camt.054.001.13.xsd">
+        <jaxb:schemaBindings>
+            <jaxb:package name="com.homsim.jeld.data.parse.camt_054_001_13"/>
+        </jaxb:schemaBindings>
+    </jaxb:bindings>
+
+    <jaxb:bindings schemaLocation="camt.060.001.03.xsd">
+        <jaxb:schemaBindings>
+            <jaxb:package name="com.homsim.jeld.data.parse.camt_060_001_03"/>
+        </jaxb:schemaBindings>
+    </jaxb:bindings>
+
+    <jaxb:bindings schemaLocation="camt.060.001.04.xsd">
+        <jaxb:schemaBindings>
+            <jaxb:package name="com.homsim.jeld.data.parse.camt_060_001_04"/>
+        </jaxb:schemaBindings>
+    </jaxb:bindings>
+
+    <jaxb:bindings schemaLocation="camt.060.001.05.xsd">
+        <jaxb:schemaBindings>
+            <jaxb:package name="com.homsim.jeld.data.parse.camt_060_001_05"/>
+        </jaxb:schemaBindings>
+    </jaxb:bindings>
+
+    <jaxb:bindings schemaLocation="camt.060.001.06.xsd">
+        <jaxb:schemaBindings>
+            <jaxb:package name="com.homsim.jeld.data.parse.camt_060_001_06"/>
+        </jaxb:schemaBindings>
+    </jaxb:bindings>
+
+    <jaxb:bindings schemaLocation="camt.060.001.07.xsd">
+        <jaxb:schemaBindings>
+            <jaxb:package name="com.homsim.jeld.data.parse.camt_060_001_07"/>
+        </jaxb:schemaBindings>
+    </jaxb:bindings>
+
+</jaxb:bindings>
