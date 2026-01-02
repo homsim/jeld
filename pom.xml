@@ -27,6 +27,9 @@
         <javafx.version>
             21
         </javafx.version>
+        <lombok.version>
+            1.18.38
+        </lombok.version>
     </properties>
 
     <dependencies>
@@ -95,7 +98,7 @@
                 lombok
             </artifactId>
             <version>
-                1.18.38
+                ${lombok.version}
             </version>
             <scope>
                 provided
@@ -166,9 +169,49 @@
                 7.0.0
             </version>
         </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.javamoney/moneta -->
+        <dependency>
+            <groupId>
+                org.javamoney
+            </groupId>
+            <artifactId>
+                moneta
+            </artifactId>
+            <version>
+                1.4.5
+            </version>
+            <type>
+                pom
+            </type>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.apache.tika/tika-core -->
+        <dependency>
+            <groupId>
+                org.apache.tika
+            </groupId>
+            <artifactId>
+                tika-core
+            </artifactId>
+            <version>
+                3.2.3
+            </version>
+        </dependency>
+
     </dependencies>
 
     <build>
+        <testSourceDirectory>
+            src/test/java
+        </testSourceDirectory>
+        <testResources>
+            <testResource>
+                <directory>
+                    src/test/resources
+                </directory>
+            </testResource>
+        </testResources>
         <plugins>
             <plugin>
                 <groupId>
@@ -187,6 +230,20 @@
                     <target>
                         21
                     </target>
+                    <annotationProcessorPaths>
+                        <path>
+                            <groupId>
+                                org.projectlombok
+                            </groupId>
+                            <artifactId>
+                                lombok
+                            </artifactId>
+                            <version>
+                                ${lombok.version}
+                            </version>
+                        </path>
+                    </annotationProcessorPaths>
+
                 </configuration>
             </plugin>
 
@@ -201,19 +258,31 @@
                     0.0.8
                 </version>
                 <configuration>
-                    <mainClass>com.homsim.jeld.Jeld</mainClass>
+                    <mainClass>
+                        com.homsim.jeld.Jeld
+                    </mainClass>
                 </configuration>
             </plugin>
 
             <plugin>
-                <groupId>org.jvnet.jaxb</groupId>
-                <artifactId>jaxb-maven-plugin</artifactId>
-                <version>4.0.0</version>
+                <groupId>
+                    org.jvnet.jaxb
+                </groupId>
+                <artifactId>
+                    jaxb-maven-plugin
+                </artifactId>
+                <version>
+                    4.0.0
+                </version>
                 <executions>
                     <execution>
-                        <id>generate</id>
+                        <id>
+                            generate
+                        </id>
                         <goals>
-                            <goal>generate</goal>
+                            <goal>
+                                generate
+                            </goal>
                         </goals>
                     </execution>
                 </executions>

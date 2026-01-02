@@ -5,24 +5,39 @@
 ```mermaid
 classDiagram
     
-    FinanceTimeSeries "*" -- "1" BankAccount
-    FinanceTimeSeries "*" -- "1" FinanceEntry
-
+    FinanceTimeSeries "1" -- "1" BankAccount
+    FinanceTimeSeries "1" -- "*" FinanceEntry
+    FinanceEntry "1" -- "*" Spending    
+    Spending "*" -- "1" BankAccount
+    
     class FinanceTimeSeries{
-        +deserialize(FinanceDataFormat format)
+        +BankAccount bankAccount
+        +FinanceEntry[] entries
     }
     class FinanceEntry{
-        +LocaleDateTime time
-        +Currency currency
+        +LocaleDateTime dateTime
+        +Money balance
         +MetaData metaData
+        +Spending[] spendings
     }
     class BankAccount{
-        +Owners[] owners
+        +String name
         +Bic bic
         +Iban iban
+        +BankAccountRole role
     }
-    class FinanceDataFormat {
+    class Spending{
+        +Money amount
+        +String usage
+        +BankAccount counterparty
+    }
+```
+
+```mermaid
+classDiagram
+    class BankAccountRole{
         <<Enumeration>>
-        CAMT
+        USERACCOUNT
+        COUNTERPARTY
     }
 ```
