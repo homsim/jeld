@@ -11,9 +11,12 @@ import com.homsim.jeld.data.Spending;
 import lombok.AllArgsConstructor;
 import org.javamoney.moneta.Money;
 
+/**
+ * Only temporary to find common properties in the CAMT(52) standard
+ */
 @AllArgsConstructor
-public class Camt052_001_08Document implements CamtDocument {
-    private com.homsim.jeld.data.parse.camt_052_001_08.Document doc;
+public class Camt052_001_06Document implements CamtDocument {
+    private com.homsim.jeld.data.parse.camt_052_001_06.Document doc;
 
     public BankAccount parseUserBankAccount() {
         return new BankAccount(
@@ -45,7 +48,7 @@ public class Camt052_001_08Document implements CamtDocument {
                                 new BankAccount(
                                         ntry.getNtryDtls().getFirst().getTxDtls().getFirst().getRltdPties().getCdtrAcct().getId().getIBAN(),
                                         ntry.getNtryDtls().getFirst().getTxDtls().getFirst().getRltdAgts().getDbtrAgt().getFinInstnId().getBICFI(),
-                                        ntry.getNtryDtls().getFirst().getTxDtls().getFirst().getRltdPties().getCdtr().getPty().getNm(),
+                                        ntry.getNtryDtls().getFirst().getTxDtls().getFirst().getRltdPties().getCdtr().getNm(),
                                         BankAccountRole.COUNTERPARTY
                                 )
 

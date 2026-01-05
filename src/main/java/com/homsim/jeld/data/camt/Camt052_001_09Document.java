@@ -5,15 +5,14 @@ import java.util.List;
 
 import com.homsim.jeld.data.BankAccount;
 import com.homsim.jeld.data.BankAccountRole;
-
 import com.homsim.jeld.data.FinanceEntry;
 import com.homsim.jeld.data.Spending;
 import lombok.AllArgsConstructor;
 import org.javamoney.moneta.Money;
 
 @AllArgsConstructor
-public class Camt052_001_08Document implements CamtDocument {
-    private com.homsim.jeld.data.parse.camt_052_001_08.Document doc;
+public class Camt052_001_09Document implements CamtDocument {
+    private com.homsim.jeld.data.parse.camt_052_001_09.Document doc;
 
     public BankAccount parseUserBankAccount() {
         return new BankAccount(

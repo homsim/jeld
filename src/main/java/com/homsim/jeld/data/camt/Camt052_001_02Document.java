@@ -12,15 +12,15 @@ import lombok.AllArgsConstructor;
 import org.javamoney.moneta.Money;
 
 @AllArgsConstructor
-public class Camt052_001_08Document implements CamtDocument {
-    private com.homsim.jeld.data.parse.camt_052_001_08.Document doc;
+public class Camt052_001_02Document implements CamtDocument {
+    private com.homsim.jeld.data.parse.camt_052_001_02.Document doc;
 
     public BankAccount parseUserBankAccount() {
         return new BankAccount(
                 this.doc.getBkToCstmrAcctRpt().getRpt().getFirst()
                         .getAcct().getId().getIBAN(),
                 this.doc.getBkToCstmrAcctRpt().getRpt().getFirst()
-                        .getAcct().getSvcr().getFinInstnId().getBICFI(),
+                        .getAcct().getSvcr().getFinInstnId().getBIC(),
                 this.doc.getBkToCstmrAcctRpt().getRpt().getFirst()
                         .getAcct().getSvcr().getFinInstnId().getNm(),
                 BankAccountRole.USERACCOUNT
@@ -44,8 +44,8 @@ public class Camt052_001_08Document implements CamtDocument {
                                 ntry.getNtryDtls().getFirst().getTxDtls().getFirst().getRmtInf().getUstrd().getFirst(),
                                 new BankAccount(
                                         ntry.getNtryDtls().getFirst().getTxDtls().getFirst().getRltdPties().getCdtrAcct().getId().getIBAN(),
-                                        ntry.getNtryDtls().getFirst().getTxDtls().getFirst().getRltdAgts().getDbtrAgt().getFinInstnId().getBICFI(),
-                                        ntry.getNtryDtls().getFirst().getTxDtls().getFirst().getRltdPties().getCdtr().getPty().getNm(),
+                                        ntry.getNtryDtls().getFirst().getTxDtls().getFirst().getRltdAgts().getDbtrAgt().getFinInstnId().getBIC(),
+                                        ntry.getNtryDtls().getFirst().getTxDtls().getFirst().getRltdPties().getCdtr().getNm(),
                                         BankAccountRole.COUNTERPARTY
                                 )
 

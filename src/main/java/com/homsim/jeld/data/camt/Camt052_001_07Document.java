@@ -12,8 +12,8 @@ import lombok.AllArgsConstructor;
 import org.javamoney.moneta.Money;
 
 @AllArgsConstructor
-public class Camt052_001_08Document implements CamtDocument {
-    private com.homsim.jeld.data.parse.camt_052_001_08.Document doc;
+public class Camt052_001_07Document implements CamtDocument {
+    private com.homsim.jeld.data.parse.camt_052_001_07.Document doc;
 
     public BankAccount parseUserBankAccount() {
         return new BankAccount(
