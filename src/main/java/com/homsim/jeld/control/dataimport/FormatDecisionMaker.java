@@ -9,6 +9,9 @@ import org.apache.tika.exception.TikaException;
 import org.apache.tika.io.TikaInputStream;
 import org.apache.tika.metadata.Metadata;
 
+/**
+ * Decides which high-level data-format a given data-file is in.
+ */
 public class FormatDecisionMaker {
     private final File dataFile;
     private final TikaConfig tikaConfig;

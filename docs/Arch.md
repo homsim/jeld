@@ -18,10 +18,14 @@ classDiagram
     DataImporter -- FormatDecisionMaker
 
 class DataImporter{
-    +FormatDecider formatDecider
+    -BankAccountService bankAccountService
+    -FinanceEntryService financeEntryService
+    -FinanceTimeSeriesService financeTimeSeriesService
+    -SpendingService serviceService
+
     +void importData(File dataFile)
-    -void importCamtData(File dataFile)
-    -void importCsvData(File dataFile)
+    -void CamtImporter.importCamtData(File dataFile)
+    -void CsvImporter.importCsvData(File dataFile)
 }
 
 class FormatDecisionMaker{
@@ -37,6 +41,8 @@ class Format{
     CSV
     OTHER
 }
+
+
 
 ```
 
