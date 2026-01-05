@@ -5,8 +5,6 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 
 public class MainController {
-    private BankAccountService bankAccountService;
-
     @FXML
     private Label welcomeText;
 

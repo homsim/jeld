@@ -23,4 +23,10 @@ public class FinanceEntry {
     private Money balance;
     @ManyToOne
     private List<Spending> spendings;
+
+    public FinanceEntry(LocalDateTime dateTime, Money balance, List<Spending> spendings) {
+        this.dateTime = dateTime;
+        this.balance = balance;
+        this.spendings = spendings;
+    }
 }

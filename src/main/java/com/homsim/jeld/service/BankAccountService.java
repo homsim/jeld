@@ -18,7 +18,7 @@ public class BankAccountService extends DatabaseBaseService<BankAccount> {
     using an SQL statement like SELECT * FROM bank_account WHERE BankAccountRole == USERACCOUNT
      */
     public BankAccount getAllUserBankAccounts() {
-        return new BankAccount("", "", BankAccountRole.USERACCOUNT);
+        return new BankAccount("", "", "", BankAccountRole.USERACCOUNT);
         // ToDo
     }
 }

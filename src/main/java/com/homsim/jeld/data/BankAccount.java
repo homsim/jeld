@@ -16,11 +16,13 @@ public class BankAccount {
     private Long id;
     private String iban;
     private  String bic;
+    private String name;
     private BankAccountRole role;
 
-    public BankAccount(String iban, String bic, BankAccountRole role) {
+    public BankAccount(String iban, String bic, String name, BankAccountRole role) {
         this.iban = iban;
         this.bic = bic;
+        this.name = name;
         this.role = role;
     }
 }

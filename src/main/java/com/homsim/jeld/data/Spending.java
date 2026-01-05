@@ -21,4 +21,10 @@ public class Spending {
     private String usage;
     @ManyToOne
     private BankAccount counterparty;
+
+    public Spending(Money amount, String usage, BankAccount counterparty) {
+        this.amount = amount;
+        this.usage = usage;
+        this.counterparty = counterparty;
+    }
 }
