@@ -37,20 +37,18 @@ public class Camt052_001_01Document implements CamtDocument {
     public List<Spending> parseSpendings() {
         List<Spending> spendings = new ArrayList<>();
         this.doc.getBkToCstmrAcctRptV01().getRpt().getFirst().getNtry().forEach(
-                ntry -> {
-                    spendings.add(
-                            new Spending(
-                                    Money.of(ntry.getAmt().getValue(), ntry.getAmt().getCcy()),
-                                    ntry.getTxDtls().getFirst().getRmtInf().getUstrd().getFirst(),
-                                    new BankAccount(
-                                            ntry.getTxDtls().getFirst().getRltdPties().getCdtrAcct().getId().getIBAN(),
-                                            ntry.getTxDtls().getFirst().getRltdAgts().getCdtrAgt().getFinInstnId().getBIC(),
-                                            ntry.getTxDtls().getFirst().getRltdPties().getCdtr().getNm(),
-                                            BankAccountRole.COUNTERPARTY
-                                    )
-                            )
-                    );
-                }
+                ntry -> spendings.add(
+                        new Spending(
+                                Money.of(ntry.getAmt().getValue(), ntry.getAmt().getCcy()),
+                                ntry.getTxDtls().getFirst().getRmtInf().getUstrd().getFirst(),
+                                new BankAccount(
+                                        ntry.getTxDtls().getFirst().getRltdPties().getCdtrAcct().getId().getIBAN(),
+                                        ntry.getTxDtls().getFirst().getRltdAgts().getCdtrAgt().getFinInstnId().getBIC(),
+                                        ntry.getTxDtls().getFirst().getRltdPties().getCdtr().getNm(),
+                                        BankAccountRole.COUNTERPARTY
+                                )
+                        )
+                )
         );
         return spendings;
     }
