@@ -1,6 +1,5 @@
 package com.homsim.jeld.control;
 
-import com.homsim.jeld.service.BankAccountService;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 

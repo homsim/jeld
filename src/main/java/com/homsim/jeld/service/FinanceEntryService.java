@@ -1,12 +1,13 @@
 package com.homsim.jeld.service;
 
 import com.google.inject.Inject;
-import com.homsim.jeld.data.FinanceEntry;
 import jakarta.persistence.EntityManagerFactory;
 
-public class FinanceEntryService extends DatabaseBaseService<FinanceEntry> {
+public class FinanceEntryService {
+    protected final EntityManagerFactory emf;
+
     @Inject
     public FinanceEntryService(EntityManagerFactory emf) {
-        super(emf, FinanceEntry.class);
+        this.emf = emf;
     }
 }

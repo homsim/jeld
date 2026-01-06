@@ -4,12 +4,10 @@ import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-/*
-A bank account that has finance data entries attached to it.
- */
 @Data
 @NoArgsConstructor
 @Entity
+@NamedQuery(name = "getUserAccounts", query = "SELECT * FROM BankAccount WHERE role = USERACCOUNT")
 public class BankAccount {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,3 +24,6 @@ public class BankAccount {
         this.role = role;
     }
 }
+/*
+A bank account that has finance data entries attached to it.
+ */

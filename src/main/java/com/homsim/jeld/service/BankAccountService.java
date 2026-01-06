@@ -1,24 +1,36 @@
 package com.homsim.jeld.service;
 
 
+import java.util.List;
+
 import com.google.inject.Inject;
 import com.homsim.jeld.data.BankAccount;
-import com.homsim.jeld.data.BankAccountRole;
+import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 
-public class BankAccountService extends DatabaseBaseService<BankAccount> {
+public class BankAccountService {
+    protected final EntityManagerFactory emf;
+
     @Inject
     public BankAccountService(EntityManagerFactory emf) {
-        super(emf, BankAccount.class);
+        this.emf = emf;
     }
 
-    /*
-    Get all BankAccounts that are the user's bank accounts and not counterparties.
+    public BankAccount findById(Long id) {
+        try (EntityManager em = emf.createEntityManager()) {
+            return em.find(BankAccount.class, id);
+        }
+    }
 
-    using an SQL statement like SELECT * FROM bank_account WHERE BankAccountRole == USERACCOUNT
+    public void update(BankAccount bankAccount) {
+        emf.runInTransaction(em -> em.merge(bankAccount));
+    }
+
+    /**
+     *  Get all BankAccounts that are the user's bank accounts and not counterparties.
      */
-    public BankAccount getAllUserBankAccounts() {
-        return new BankAccount("", "", "", BankAccountRole.USERACCOUNT);
-        // ToDo
+    public List<BankAccount> getAllUserBankAccounts() {
+        EntityManager em = emf.createEntityManager();
+        return em.createNamedQuery("getUserAccounts", BankAccount.class).getResultList();
     }
 }
