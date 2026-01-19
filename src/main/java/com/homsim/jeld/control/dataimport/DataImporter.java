@@ -3,7 +3,9 @@ package com.homsim.jeld.control.dataimport;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 import javax.xml.stream.XMLInputFactory;
 import javax.xml.stream.XMLStreamException;
@@ -15,9 +17,7 @@ import com.homsim.jeld.data.FinanceEntry;
 import com.homsim.jeld.data.camt.CamtAdapter;
 import com.homsim.jeld.data.camt.CamtDocument;
 import com.homsim.jeld.service.BankAccountService;
-import com.homsim.jeld.service.FinanceEntryService;
-import com.homsim.jeld.service.FinanceTimeSeriesService;
-import com.homsim.jeld.service.SpendingService;
+import com.homsim.jeld.service.DataImporterService;
 import jakarta.xml.bind.JAXBContext;
 import jakarta.xml.bind.JAXBElement;
 import jakarta.xml.bind.JAXBException;
@@ -28,13 +28,10 @@ import jakarta.xml.bind.Unmarshaller;
  */
 public final class DataImporter {
     @Inject
-    private BankAccountService bankAccountService;
+    public static BankAccountService bankAccountService;
+
     @Inject
-    private FinanceEntryService financeEntryService;
-    @Inject
-    private FinanceTimeSeriesService financeTimeSeriesService;
-    @Inject
-    private SpendingService serviceService;
+    public static DataImporterService dataImporterService;
 
     private DataImporter() {
     }
@@ -93,6 +90,8 @@ public final class DataImporter {
                 BankAccount bankAccount = camtDocument.parseUserBankAccount();
 
                 // todo: persist the data
+                dataImporterService.saveImportedData(bankAccount, List.of(financeEntry));
+
 
             } catch (JAXBException exc) {
                 throw new XMLStreamException("Failed to unmarshal XML file: " + dataFile.getAbsolutePath(), exc);

@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Entity
 @NamedQuery(name = "getUserAccounts", query = "SELECT * FROM BankAccount WHERE role = USERACCOUNT")
+@NamedQuery(name = "findByIban", query = "SELECT * FROM BankAccount WHERE iban = :iban")
 public class BankAccount {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

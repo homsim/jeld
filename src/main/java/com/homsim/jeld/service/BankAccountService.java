@@ -27,10 +27,20 @@ public class BankAccountService {
     }
 
     /**
-     *  Get all BankAccounts that are the user's bank accounts and not counterparties.
+     * Get all BankAccounts that are the user's bank accounts and not counterparties.
      */
     public List<BankAccount> getAllUserBankAccounts() {
-        EntityManager em = emf.createEntityManager();
-        return em.createNamedQuery("getUserAccounts", BankAccount.class).getResultList();
+        return emf.createEntityManager()
+                  .createNamedQuery("getUserAccounts", BankAccount.class).getResultList();
+    }
+
+    /**
+     * Find a BankAccount by its Iban
+     * @param iban
+     */
+    public BankAccount findByIban(String iban) {
+        return emf.createEntityManager()
+                .createNamedQuery("findByIban", BankAccount.class).setParameter("iban", iban)
+                .getSingleResult();
     }
 }
