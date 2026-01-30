@@ -1,6 +1,6 @@
 package com.homsim.jeld.data.camt;
 
-import java.util.List;
+import java.util.Set;
 
 import com.homsim.jeld.data.BankAccount;
 import com.homsim.jeld.data.FinanceEntry;
@@ -11,6 +11,6 @@ import com.homsim.jeld.data.Spending;
  */
 public interface CamtDocument {
     BankAccount parseUserBankAccount();
-    List<Spending> parseSpendings();
+    Set<Spending> parseSpendings();
     FinanceEntry parseFinanceEntry();
 }

@@ -6,7 +6,6 @@ import com.google.inject.Inject;
 import com.homsim.jeld.data.FinanceTimeSeries;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
-import jakarta.persistence.NamedQuery;
 
 public class FinanceTimeSeriesService {
     protected final EntityManagerFactory emf;

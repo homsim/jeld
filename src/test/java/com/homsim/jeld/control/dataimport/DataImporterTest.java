@@ -7,10 +7,12 @@ import java.nio.file.Paths;
 
 import javax.xml.stream.XMLStreamException;
 
-import jakarta.persistence.EntityManager;
+import com.google.inject.Guice;
+import com.google.inject.Injector;
+import com.homsim.jeld.TestDatabaseModule;
 import jakarta.persistence.EntityManagerFactory;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mock;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
@@ -18,24 +20,25 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class DataImporterTest {
     Path resourceDirectory = Paths.get("src", "test", "resources", "dataimport");
-
-    @Mock
     EntityManagerFactory emf;
-    @Mock
-    EntityManager em;
+    DataImporter dataImporter;
+
+    @BeforeEach
+    void setUp() {
+        Injector injector = Guice.createInjector(new TestDatabaseModule());
+        dataImporter = injector.getInstance(DataImporter.class);
+        emf = injector.getInstance(EntityManagerFactory.class);
+    }
 
     /**
      * Test that the import of a CAMT.052.001.08 works and is persisted.
      */
-    //@Test
+    @Test
     public void testImportDataFromCamt52V8() {
         File file = new File(resourceDirectory.toFile(), "2025.12.06.xml");
         try {
-            DataImporter.importData(file);
-            /* todo:
-            Setup a mock database and -connection
-             */
-
+            dataImporter.importData(file);
+            // todo: assert persistence
         } catch (
                 UnknownDataFormatException |
                 IOException |
@@ -53,7 +56,7 @@ public class DataImporterTest {
         File file = new File(resourceDirectory.toFile(), "some.jpg");
         Exception exc = assertThrows(
                 UnknownDataFormatException.class,
-                () -> DataImporter.importData(file)
+                () -> dataImporter.importData(file)
         );
         // this assertion heavily relies on the thrown exception message.
         assertEquals("Unable to import file some.jpg: Unknown format.",

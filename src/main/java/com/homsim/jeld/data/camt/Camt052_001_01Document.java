@@ -1,7 +1,7 @@
 package com.homsim.jeld.data.camt;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 import com.homsim.jeld.data.BankAccount;
 import com.homsim.jeld.data.BankAccountRole;
@@ -34,8 +34,8 @@ public class Camt052_001_01Document implements CamtDocument {
         );
     }
 
-    public List<Spending> parseSpendings() {
-        List<Spending> spendings = new ArrayList<>();
+    public Set<Spending> parseSpendings() {
+        Set<Spending> spendings = new HashSet<>();
         this.doc.getBkToCstmrAcctRptV01().getRpt().getFirst().getNtry().forEach(
                 ntry -> spendings.add(
                         new Spending(

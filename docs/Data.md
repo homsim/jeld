@@ -1,40 +1,50 @@
 # Data models
 
-## Finance time series model
+## Database model
 
 ```mermaid
 classDiagram
     
-    FinanceTimeSeries "1" -- "1" BankAccount
-    FinanceTimeSeries "1" -- "*" FinanceEntry
-    FinanceEntry "1" -- "*" Spending    
-    Spending "*" -- "1" BankAccount
+    FinanceTimeSeries "0..1" -- "1" BankAccount
+    FinanceTimeSeries "1" -- "0..*" FinanceEntry
+    FinanceEntry "1" -- "0..*" Spending    
+    Spending "1..*" -- "1" BankAccount
     
     class FinanceTimeSeries{
-        +BankAccount bankAccount
-        +FinanceEntry[] entries
+        +id : BIGINT
+        bank_account_id : BIGINT
+        created_at : TIMESTAMP
+        updated_at : TIMESTAMP
     }
     class FinanceEntry{
-        +LocaleDateTime dateTime
-        +Money balance
-        +MetaData metaData
-        +Spending[] spendings
+        +id : BIGINT
+        finance_time_series_id : BIGINT
+        date_time : TIMESTAMP
+        balance_amount : NUMERIC(19,4)
+        balance_currency : VARCHAR(3)
+        metadata : VARCHAR
+        created_at : TIMESTAMP
+        updated_at : TIMESTAMP
     }
     class BankAccount{
-        +String name
-        +Bic bic
-        +Iban iban
-        +BankAccountRole role
+        +id : BIGINT
+        name : VARCHAR(255)
+        iban : VARCHAR(34)
+        bic : VARCHAR(12)
+        role : BANK_ACCOUNT_ROLE
+        created_at : TIMESTAMP
+        updated_at : TIMESTAMP
     }
     class Spending{
-        +Money amount
-        +String usage
-        +BankAccount counterparty
+        +id : BIGINT
+        finance_entry_id : BIGINT
+        amount : NUMERIC(19,4)
+        currency : VARCHAR(3)
+        usage : VARCHAR(1000)
+        counterparty_id : BIGINT
+        created_at : TIMESTAMP
+        updated_at : TIMESTAMP
     }
-```
-
-```mermaid
-classDiagram
     class BankAccountRole{
         <<Enumeration>>
         USERACCOUNT

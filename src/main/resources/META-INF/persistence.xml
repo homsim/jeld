@@ -15,13 +15,24 @@
         <class>com.homsim.jeld.data.Spending</class>
 
         <properties>
-            <!-- Database connection settings. Is it safe to write the password here? Is this even required as an embedded DB? -->
-            <property name="jakarta.persistence.jdbc.url" value="jdbc:h2:mem:db1;DB_CLOSE_DELAY=-1" />
+            <!-- Database connection settings. -->
+            <!-- property name="jakarta.persistence.jdbc.url" value="jdbc:h2:mem:db1;DB_CLOSE_DELAY=-1" /-->
+            <property name="jakarta.persistence.jdbc.url" value="jdbc:h2:file:~/.cache/jeld/database"/>
+            <property name="jakarta.persistence.jdbc.dialect" value="H2Dialect"/>
             <property name="jakarta.persistence.jdbc.user" value="sa" />
             <property name="jakarta.persistence.jdbc.password" value="" />
 
-            <!-- Automatically export the schema. Replace as soon as the full schema is clear-->
-            <property name="jakarta.persistence.schema-generation.database.action" value="create" />
+            <property name="jakarta.persistence.schema-generation.database.action" value="drop-and-create" />
+
+            <property name="jakarta.persistence.schema-generation.create-source" value="script"/>
+            <property name="jakarta.persistence.schema-generation.create-script-source" value="META-INF/create.sql"/>
+
+            <property name="jakarta.persistence.schema-generation.drop-source" value="script"/>
+            <property name="jakarta.persistence.schema-generation.drop-script-source" value="META-INF/drop.sql"/>
+
+            <!-- ensure that multiline statements work in schema files. Need to terminate statements with ';'! -->
+            <property name="hibernate.hbm2ddl.import_files_sql_extractor"
+                               value="org.hibernate.tool.schema.internal.script.MultiLineSqlScriptExtractor"/>
 
             <!-- Echo all executed SQL to console -->
             <property name="hibernate.show_sql" value="true" />

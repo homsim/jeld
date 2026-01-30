@@ -10,6 +10,7 @@ module com.homsim.jeld {
     requires java.money;
     requires org.javamoney.moneta;
     requires org.apache.tika.core;
+    requires com.h2database;
 
     opens com.homsim.jeld to javafx.fxml;
     opens com.homsim.jeld.control to javafx.fxml;
@@ -23,7 +24,10 @@ module com.homsim.jeld {
     opens com.homsim.jeld.data.parse.camt_052_001_08 to jakarta.xml.bind;
 
     opens com.homsim.jeld.data to org.hibernate.orm.core;
+    opens com.homsim.jeld.service to com.google.guice;
 
     exports com.homsim.jeld;
-    opens com.homsim.jeld.control.dataimport to javafx.fxml;
+    opens com.homsim.jeld.control.dataimport to javafx.fxml, com.google.guice;
+
+    // how do I perform tests with Guice DI without basically opening up everything to Guice?!
 }

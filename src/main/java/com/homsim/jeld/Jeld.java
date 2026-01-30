@@ -5,18 +5,24 @@ import com.google.inject.Injector;
 import com.homsim.jeld.control.GuiceControllerFactory;
 import com.homsim.jeld.di.DatabaseModule;
 import jakarta.persistence.EntityManagerFactory;
+import org.h2.tools.Server;
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.sql.SQLException;
 
 public class Jeld extends Application {
     private Injector injector;
 
     @Override
-    public void init() {
+    public void init() throws SQLException {
+        // temporary for the sake of development. Make this a CLI argument "--debug" or something later
+        Server.createWebServer("-webPort", "8082").start();
+
         injector = Guice.createInjector(new DatabaseModule());
     }
 
